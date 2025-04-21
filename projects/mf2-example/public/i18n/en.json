@@ -1,0 +1,5 @@
+{
+    "HELLO": "Hello {{name}}!",
+    "PLANET_EVENT" : "At time {$time :time}, on {$time :date}, there was {$what} on planet {$planet :number}",
+    "EARTHQUAKE" : "an earthquake"
+}
