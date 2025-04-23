@@ -12,7 +12,33 @@ which uses [messageformat V3](https://messageformat.github.io/messageformat/api/
 For more details, you can read
 [this great article](https://blogs.igalia.com/compilers/2024/05/06/messageformat-2-0-a-new-standard-for-translatable-messages/).
 
-## Dev server
+## Installation
+
+Transloco must be installed and configured in your application.
+
+```
+pnpm add @cloarec/transloco-mf2
+```
+
+Then in your `main.config.ts` :
+
+```typescript
+
+export const appConfig: ApplicationConfig = {
+    providers: [
+        //...
+        provideTransloco({/* your configuration */}),
+        provideTranslocoMF2Transpiler({
+            // https://messageformat.github.io/variables/messageformat_functions.DraftFunctions.html
+            includeDraftFunctions: true
+        }),
+    ],
+};
+```
+
+## Development
+
+### Dev server
 
 ```
 # Compile the library in watch mode
@@ -22,7 +48,7 @@ pnpm serve
 ```
 
 
-## Building
+### Building
 
 To build the library, run:
 
@@ -32,7 +58,7 @@ ng build transloco-mf2
 
 This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
 
-### Publishing the Library
+#### Publishing the Library
 
 Once the project is built, you can publish your library by following these steps:
 
@@ -47,9 +73,7 @@ Once the project is built, you can publish your library by following these steps
     npm publish
     ```
 
-
-
-## TODO
+### TODO
 
 * Adapt tests
 * Recreate cache feature (deleted for simplicity reasons)
