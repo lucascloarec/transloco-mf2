@@ -1,20 +1,10 @@
-import {
-    ApplicationConfig,
-    inject,
-    Injectable,
-    isDevMode,
-    provideZoneChangeDetection,
-} from '@angular/core';
+import { ApplicationConfig, inject, Injectable, isDevMode, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { provideMF2Transloco } from 'ngx-transloco-mf2';
-import {
-    provideTransloco,
-    Translation,
-    TranslocoLoader,
-} from '@jsverse/transloco';
+import { provideTransloco, Translation, TranslocoLoader } from '@jsverse/transloco';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { provideTranslocoMF2Transpiler } from '@cloarec/transloco-mf2';
 
 @Injectable({ providedIn: 'root' })
 export class TranslocoHttpLoader implements TranslocoLoader {
@@ -24,6 +14,7 @@ export class TranslocoHttpLoader implements TranslocoLoader {
         return this.http.get<Translation>(`/i18n/${lang}.json`);
     }
 }
+
 export const appConfig: ApplicationConfig = {
     providers: [
         provideHttpClient(),
@@ -37,7 +28,7 @@ export const appConfig: ApplicationConfig = {
             },
             loader: TranslocoHttpLoader,
         }),
-        provideMF2Transloco({ includeDraftFunctions: true }),
+        provideTranslocoMF2Transpiler({ includeDraftFunctions: true }),
         provideZoneChangeDetection({ eventCoalescing: true }),
         provideRouter(routes),
     ],

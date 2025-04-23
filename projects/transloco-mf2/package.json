@@ -1,5 +1,5 @@
 {
-    "name": "ngx-transloco-mf2",
+    "name": "@cloarec/transloco-mf2",
     "version": "0.0.1",
     "peerDependencies": {
         "@angular/common": "^19.2.0",

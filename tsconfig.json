@@ -10,7 +10,7 @@
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
         "paths": {
-            "ngx-transloco-mf2": ["./dist/ngx-transloco-mf2"]
+            "@cloarec/transloco-mf2": ["./dist/transloco-mf2"]
         },
         "skipLibCheck": true,
         "isolatedModules": true,

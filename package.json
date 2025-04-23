@@ -1,11 +1,11 @@
 {
     "name": "transloco-mf2",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "scripts": {
         "ng": "ng",
         "start": "ng serve --no-hmr",
-        "build": "ng build ngx-transloco-mf2",
-        "watch": "ng build ngx-transloco-mf2 --watch --configuration development",
+        "build": "ng build transloco-mf2",
+        "watch": "ng build transloco-mf2 --watch --configuration development",
         "test": "ng test",
         "lint": "ng lint",
         "lint-fix": "ng lint --fix"

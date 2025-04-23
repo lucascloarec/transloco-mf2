@@ -1,17 +1,16 @@
-import {
-    DefaultTranspiler,
-    getValue,
-    isObject,
-    setValue,
-    TranspileParams,
-} from '@jsverse/transloco';
-import { inject, Injectable } from '@angular/core';
-import { MF2_TRANSLOCO_CONFIG } from './mf-transloco.config';
-import { MessageFormat } from 'messageformat';
+import { inject, Injectable, InjectionToken } from '@angular/core';
+import { DefaultTranspiler, getValue, isObject, setValue, TranspileParams } from '@jsverse/transloco';
+import { MessageFormat, MessageFormatOptions } from 'messageformat';
+
+export interface TranslocoMF2Config extends MessageFormatOptions<string> {
+    includeDraftFunctions: boolean;
+}
+
+export const TRANSLOCO_MF2_CONFIG = new InjectionToken<TranslocoMF2Config>('TRANSLOCO_MF2_CONFIG');
 
 @Injectable()
-export class MF2TranslocoTranspiler extends DefaultTranspiler {
-    mf2TranslocoConfig = inject(MF2_TRANSLOCO_CONFIG, { optional: true });
+export class TranslocoMF2Transpiler extends DefaultTranspiler {
+    mf2Config = inject(TRANSLOCO_MF2_CONFIG, { optional: true });
     private locale?: string;
 
     constructor() {
@@ -38,22 +37,14 @@ export class MF2TranslocoTranspiler extends DefaultTranspiler {
                     translation,
                     key,
                 });
-                const mf = new MessageFormat(
-                    this.locale,
-                    transpiled,
-                    this.mf2TranslocoConfig || {}
-                );
+                const mf = new MessageFormat(this.locale, transpiled, this.mf2Config || {});
                 value = setValue(value, p, mf.format(param));
             });
             return value;
         }
         if (!Array.isArray(value)) {
             const transpiled = super.transpile(transpileParams);
-            const mf = new MessageFormat(
-                this.locale,
-                transpiled,
-                this.mf2TranslocoConfig || {}
-            );
+            const mf = new MessageFormat(this.locale, transpiled, this.mf2Config || {});
             return mf.format(params);
         }
         return value;

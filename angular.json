@@ -9,23 +9,23 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-transloco-mf2": {
+    "transloco-mf2": {
       "projectType": "library",
-      "root": "projects/ngx-transloco-mf2",
-      "sourceRoot": "projects/ngx-transloco-mf2/src",
+      "root": "projects/transloco-mf2",
+      "sourceRoot": "projects/transloco-mf2/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/ngx-transloco-mf2/ng-package.json"
+            "project": "projects/transloco-mf2/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ngx-transloco-mf2/tsconfig.lib.prod.json"
+              "tsConfig": "projects/transloco-mf2/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/ngx-transloco-mf2/tsconfig.lib.json"
+              "tsConfig": "projects/transloco-mf2/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -33,7 +33,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/ngx-transloco-mf2/tsconfig.spec.json",
+            "tsConfig": "projects/transloco-mf2/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -44,10 +44,10 @@
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": [
-              "projects/ngx-transloco-mf2/**/*.ts",
-              "projects/ngx-transloco-mf2/**/*.html"
+              "projects/transloco-mf2/**/*.ts",
+              "projects/transloco-mf2/**/*.html"
             ],
-            "eslintConfig": "projects/ngx-transloco-mf2/eslint.config.js"
+            "eslintConfig": "projects/transloco-mf2/eslint.config.js"
           }
         }
       }

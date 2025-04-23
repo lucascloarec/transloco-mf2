@@ -1,9 +1,11 @@
-<button type="button" (click)="changeLocale()">{{ 'HELLO' | transloco:{name:'Lucas'} }}</button>
+<button type="button" (click)="changeLocale()">{{ 'HELLO' | transloco:{name: 'Lucas'} }}</button>
 
 
-<p>{{'PLANET_EVENT' | transloco:{
-    planet: 3,
-    what: 'EARTHQUAKE' | transloco,
-    time:today
-} }}</p>
+<p>{{
+        'PLANET_EVENT' | transloco:{
+            planet: 3,
+            what: 'EARTHQUAKE' | transloco,
+            time: today
+        }
+    }}</p>
 

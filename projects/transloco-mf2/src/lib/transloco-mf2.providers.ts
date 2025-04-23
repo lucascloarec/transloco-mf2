@@ -1,16 +1,12 @@
-import {
-    MF2_TRANSLOCO_CONFIG,
-    MF2TranslocoConfig,
-} from './mf-transloco.config';
 import { makeEnvironmentProviders } from '@angular/core';
 import { provideTranslocoTranspiler } from '@jsverse/transloco';
-import { MF2TranslocoTranspiler } from './mf2-transloco-transpiler';
 import { DraftFunctions } from 'messageformat/functions';
+import { TranslocoMF2Config, TRANSLOCO_MF2_CONFIG, TranslocoMF2Transpiler } from './transloco-mf2.transpiler';
 
-export function provideMF2Transloco(config?: MF2TranslocoConfig) {
+export function provideTranslocoMF2Transpiler(config?: TranslocoMF2Config) {
     return makeEnvironmentProviders([
         {
-            provide: MF2_TRANSLOCO_CONFIG,
+            provide: TRANSLOCO_MF2_CONFIG,
             useValue: {
                 ...config,
                 functions: config?.includeDraftFunctions
@@ -21,6 +17,6 @@ export function provideMF2Transloco(config?: MF2TranslocoConfig) {
                     : config?.functions,
             },
         },
-        provideTranslocoTranspiler(MF2TranslocoTranspiler),
+        provideTranslocoTranspiler(TranslocoMF2Transpiler),
     ]);
 }
