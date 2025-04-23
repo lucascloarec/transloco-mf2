@@ -42,7 +42,7 @@ export const appConfig: ApplicationConfig = {
 
 ### Dev server
 
-```
+```bash
 # Compile the library in watch mode
 pnpm watch
 # Run the dev server
