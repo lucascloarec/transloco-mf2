@@ -12,9 +12,11 @@ which uses [messageformat V3](https://messageformat.github.io/messageformat/api/
 For more details, you can read
 [this great article](https://blogs.igalia.com/compilers/2024/05/06/messageformat-2-0-a-new-standard-for-translatable-messages/).
 
-## Installation
+## Installation in your project
 
 Transloco must be installed and configured in your application.
+
+You also must install the latest version of [messageformat](https://www.npmjs.com/package/messageformat).
 
 ```
 pnpm add @cloarec/transloco-mf2
@@ -36,7 +38,7 @@ export const appConfig: ApplicationConfig = {
 };
 ```
 
-## Development
+## Development of the library
 
 ### Dev server
 
@@ -47,31 +49,20 @@ pnpm watch
 pnpm serve
 ```
 
-
 ### Building
 
-To build the library, run:
-
 ```bash
-ng build transloco-mf2
+pnpm install
+pnpm run build
 ```
-
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
 
 #### Publishing the Library
 
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-
-    ```bash
-    cd dist/transloco-mf2
-    ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-    ```bash
-    npm publish
-    ```
+```bash
+cd dist/transloco-mf2
+# remove dry-run option to really publish the package ;)
+pnpm publish --access=public --dry-run
+```
 
 ### TODO
 
