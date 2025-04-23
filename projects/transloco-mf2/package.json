@@ -1,6 +1,6 @@
 {
     "name": "@cloarec/transloco-mf2",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "peerDependencies": {
         "@angular/common": "^19.2.0",
         "@angular/core": "^19.2.0"
@@ -8,5 +8,17 @@
     "dependencies": {
         "tslib": "^2.3.0"
     },
-    "sideEffects": false
+    "sideEffects": false,
+    "keywords": [
+        "transloco",
+        "messageformat",
+        "messageformat 2",
+        "mf2",
+        "angular",
+        "i18n",
+        "translate",
+        "pluralization",
+        "gender",
+        "translate"
+    ]
 }
