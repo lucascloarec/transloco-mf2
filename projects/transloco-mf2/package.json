@@ -1,9 +1,14 @@
 {
     "name": "@cloarec/transloco-mf2",
-    "version": "0.0.2",
+    "version": "0.0.3",
+    "repository": {
+        "url": "https://github.com/lucascloarec/transloco-mf2"
+    },
     "peerDependencies": {
         "@angular/common": "^19.2.0",
-        "@angular/core": "^19.2.0"
+        "@angular/core": "^19.2.0",
+        "@jsverse/transloco": "^7.6.1",
+        "messageformat": "^4.0.0-10"
     },
     "dependencies": {
         "tslib": "^2.3.0"
