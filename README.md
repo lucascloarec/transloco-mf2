@@ -31,7 +31,6 @@ export const appConfig: ApplicationConfig = {
         //...
         provideTransloco({
             //... your configuration
-            prodMode: !isDevMode(),
             // change default transloco interpolation to prevent conflict
             interpolation: ['<<<', '>>>'],
         }),
