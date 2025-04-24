@@ -9,3 +9,6 @@
         }
     }}</p>
 
+<input type="number" [(ngModel)]="count">
+
+<p>{{'ITEMS' | transloco:{ count } }}</p>

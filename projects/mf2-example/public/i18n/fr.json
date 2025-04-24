@@ -1,5 +1,6 @@
 {
-    "HELLO": "Bonjour {{name}} !",
+    "HELLO": "Bonjour <<<name>>> !",
     "PLANET_EVENT" : "Le {$time :date} à {$time :time}, il y a eu {$what} sur la planète {$planet :number}",
-    "EARTHQUAKE" : "un tremblement de terre"
+    "EARTHQUAKE" : "un tremblement de terre",
+    "ITEMS" : ".input {$count :number}\n.match $count\n0   {{ Pas d'élément. }}\none {{ 1 élément. }}\n*   {{ {$count} éléments. }}"
 }
