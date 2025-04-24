@@ -29,7 +29,12 @@ Then in your `main.config.ts` :
 export const appConfig: ApplicationConfig = {
     providers: [
         //...
-        provideTransloco({/* your configuration */}),
+        provideTransloco({
+            //... your configuration
+            prodMode: !isDevMode(),
+            // change default transloco interpolation to prevent conflict
+            interpolation: ['<<<', '>>>'],
+        }),
         provideTranslocoMF2Transpiler({
             // https://messageformat.github.io/variables/messageformat_functions.DraftFunctions.html
             includeDraftFunctions: true
